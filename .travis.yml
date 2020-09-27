@@ -1,0 +1,18 @@
+language: python
+sudo: false
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.5
+    - python: 3.6
+    - python: 3.7
+  fast_finish: true
+addons:
+  apt:
+    packages:
+      - libxmlsec1-dev
+      - swig
+install:
+  - pip install tox tox-travis -U pip
+script:
+  - tox
